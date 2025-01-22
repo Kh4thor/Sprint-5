@@ -63,7 +63,6 @@ public class InMemoryTaskManager implements TaskManager {
 
 	// создать подзадачу
 	@Override
-
 	public Integer addSubtask(Subtask subtask) {
 		if (subtask != null && subtask.getId() == 0) {
 			int maintaskId = subtask.getMaintaskId();

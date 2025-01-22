@@ -4,11 +4,12 @@ import java.util.List;
 
 import ru.Egor.Malyshev.model.Task;
 
-public interface HistoryManager {
+public interface HistoryManager<T extends Task> {
 
 	// добавить задачу в историю
-	Integer addToHistory(Task task);
+	Integer addToHistory(T task);
 
 	// получить историю задач (последние 10 задач)
 	List<Task> getHistory() throws Exception;
+
 }

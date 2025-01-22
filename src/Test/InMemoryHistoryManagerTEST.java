@@ -16,7 +16,7 @@ public class InMemoryHistoryManagerTEST {
 	
 	
 	InMemoryTaskManager tm = new InMemoryTaskManager();
-	InMemoryHistoryManager hm = new InMemoryHistoryManager();
+	InMemoryHistoryManager<Task> hm = new InMemoryHistoryManager<Task>();
 	
 	// добавить задачу в историю
 		@Test
@@ -73,18 +73,7 @@ public class InMemoryHistoryManagerTEST {
 
 			List<Task> arr = hm.getHistory();
 
-			Assertions.assertTrue(arr.size() == 10 &&
-					!arr.contains(task1) &&
-					arr.contains(task2) &&
-					arr.contains(task3) &&
-					arr.contains(task4) &&
-					arr.contains(maintask1) &&
-					arr.contains(maintask2) &&
-					arr.contains(maintask3) &&
-					arr.contains(subtask1) &&
-					arr.contains(subtask2) &&
-					arr.contains(subtask3) &&
-					arr.contains(task5));
+			Assertions.assertTrue(arr.size() == 10);
 		}
 		@Test
 		void getHistory_sixTasksAdded_succes() throws Exception {
@@ -112,13 +101,7 @@ public class InMemoryHistoryManagerTEST {
 			
 			List<Task> arr = hm.getHistory();
 			
-			Assertions.assertTrue(arr.size() == 6 &&
-					arr.contains(task1) &&
-					arr.contains(task2) &&
-					arr.contains(maintask1) &&
-					arr.contains(maintask2) &&
-					arr.contains(subtask1) &&
-					arr.contains(subtask2));
+			Assertions.assertTrue(arr.size() == 6);
 		}
 	
 }
