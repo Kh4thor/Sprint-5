@@ -14,7 +14,7 @@ import ru.Egor.Malyshev.service.InMemoryTaskManager;
 class InMemoryTaskManagerTEST {
 
 	InMemoryTaskManager tm = new InMemoryTaskManager();
-	InMemoryHistoryManager hm = new InMemoryHistoryManager();
+	InMemoryHistoryManager<Task> hm = new InMemoryHistoryManager<Task>();
 
 	// добавить задачу
 	@Test
