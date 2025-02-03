@@ -1,8 +1,8 @@
 package Test;
 
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 
 import ru.Egor.Malyshev.model.Maintask;
 import ru.Egor.Malyshev.model.Subtask;

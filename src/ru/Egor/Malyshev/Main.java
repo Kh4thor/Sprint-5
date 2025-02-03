@@ -15,7 +15,6 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 
-//		InMemoryTaskManager tm = new InMemoryTaskManager();
 		TaskManager tm = Managers.getDefault();
 		
 		InMemoryHistoryManager<Task> hm = new InMemoryHistoryManager<Task>();
@@ -31,23 +30,18 @@ public class Main {
 		tm.addTask(task1);
 		tm.addTask(task2);
 		tm.addTask(task3);
-		tm.getTask(task1.getId());
-		tm.getTask(task2.getId());
-		tm.getTask(task3.getId());
-		tm.getHistory().forEach(el->System.out.println(el));
-		System.out.println("-----------------------------------------------");
-		task1.setTaskProgress(TaskProgress.DONE);
+		tm.getTask(task1.getId()).setTaskProgress(TaskProgress.IN_PROGRESS);
+		tm.getTask(task2.getId()).setTaskProgress(TaskProgress.IN_PROGRESS);
+		tm.getTask(task3.getId()).setTaskProgress(TaskProgress.IN_PROGRESS);
+
 		tm.updateTask(task1);
-		task2.setTaskProgress(TaskProgress.IN_PROGRESS);
 		tm.updateTask(task2);
-		task3.setTaskProgress(TaskProgress.DONE);
 		tm.updateTask(task3);
 		tm.getTask(task1.getId());
 		tm.getTask(task2.getId());
 		tm.getTask(task3.getId());
-		tm.getHistory().forEach(el->System.out.println(el));
 		
-//		tm.getTasksList().forEach(task -> System.out.println(task));
+		tm.getHistory().forEach(el->System.out.println(el));
 
 		System.out.println();
 		System.out.println("-----------------------------------------------");
